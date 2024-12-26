@@ -59,7 +59,7 @@ python fetch_userinfo.py 33173273
 ```json
 {
   "userDetails": {
-    "id": profileID,
+    "id": "profileID",
     "name": "name",
     "email": null,
     "avatarUrl": "avatarUrl",
@@ -68,22 +68,22 @@ python fetch_userinfo.py 33173273
     "badges": [
       {
         "name": "badgeName",
-        "priority": badgePriority
+        "priority": "badgePriority"
       }
     ],
-    "level": userLevel,
-    "xp": userXP,
+    "level": "userLevel",
+    "xp": "userXP",
     "countryCode": "countryCode",
-    "isPro": isPro,
+    "isPro": "isPro",
     "isFirstVisitAfterTrialAsPro": false,
-    "followers": followerCount,
-    "following": followingCount,
+    "followers": "followerCount",
+    "following": "followingCount",
     "isFollowing": false,
     "bio": "bio",
     "registerDate": "registerDate",
     "connectedAccounts": [
       {
-        "connectionId": connectionID,
+        "connectionId": "connectionID",
         "service": "serviceName",
         "name": "accountName",
         "profileUrl": null,
@@ -95,21 +95,21 @@ python fetch_userinfo.py 33173273
   },
   "coursesProgress": [
     {
-      "courseId": courseID,
+      "courseId": "courseID",
       "courseName": "courseName",
       "courseIconURL": "courseIconURL",
       "courseColor": "courseColor",
-      "isCompleted": isCompleted,
+      "isCompleted": "isCompleted",
       "lastProgressDate": "lastProgressDate",
-      "progress": progressValue,
-      "isLearnEngineCourse": isLearnEngineCourse,
+      "progress": "progressValue",
+      "isLearnEngineCourse": "isLearnEngineCourse",
       "alias": null,
-      "statusId": statusID
+      "statusId": "statusID"
     }
   ],
   "certificates": [
     {
-      "courseId": courseID,
+      "courseId": "courseID",
       "name": "certificateName",
       "courseColor": "courseColor",
       "iconURL": "iconURL",
@@ -123,48 +123,47 @@ python fetch_userinfo.py 33173273
   ],
   "userGoals": [],
   "userStreak": {
-    "streak": streakCount,
+    "streak": "streakCount",
     "streakDate": "streakDate"
   },
   "codeCoaches": null,
   "userBadges": null,
   "userCodes": [
     {
-      "id": id,
+      "id": "id",
       "publicId": "publicId",
       "language": "language",
       "name": "name",
-      "isPublic": isPublic,
+      "isPublic": "isPublic",
       "modifiedDate": "modifiedDate"
-        
     }
   ],
   "userGoalProgress": [
     {
-      "id": id,
-      "userGoalId": userGoalId,
-      "currentValue": currentValue,
-      "targetValue": targetValue,
+      "id": "id",
+      "userGoalId": "userGoalId",
+      "currentValue": "currentValue",
+      "targetValue": "targetValue",
       "localDate": "localDate",
       "date": "date"
     }
   ],
   "userLessonGoals": [
     {
-      "id": id,
-      "userId": userId,
-      "goalType": goalType1,
-      "goalValue": goalValue,
-      "origin": origin,
+      "id": "id",
+      "userId": "userId",
+      "goalType": "goalType1",
+      "goalValue": "goalValue",
+      "origin": "origin",
       "localDate": "localDate",
       "date": "date"
     }
   ],
   "userDailyStreak": {
-    "dailyStreakCount": dailyStreakCount,
+    "dailyStreakCount": "dailyStreakCount",
     "dailyStreaks": [
       {
-        "status": dailyStreakStatus
+        "status": "dailyStreakStatus"
       }
     ]
   },
