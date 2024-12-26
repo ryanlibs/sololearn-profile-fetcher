@@ -41,6 +41,16 @@ A Python script to fetch user profile information from [Sololearn](https://www.s
 and more...
 
 ## Usage
+Endpoint:
+```sh
+https://sololearn-api.replit.app/?profile=<profile_id>
+```
+Example:
+```sh
+https://sololearn-api.replit.app/?profile=33173273
+```
+
+OR
 
 Run the script with the profile ID of the user whose data you want to fetch:
 
