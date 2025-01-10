@@ -55,13 +55,13 @@ OR
 Run the script with the profile ID of the user whose data you want to fetch:
 
 ```bash
-python fetch_userinfo.py <profile_id>
+python main.py <profile_id>
 ```
 
 Example:
 
 ```bash
-python fetch_userinfo.py 33173273
+python main.py 33173273
 ```
 
 ## Output 
