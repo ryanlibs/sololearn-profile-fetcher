@@ -1,6 +1,7 @@
 import sys
 import json
 import requests
+import time
 
 def fetch_guid(profile_id):
     url = f"https://www.sololearn.com/en/profile/{profile_id}"
@@ -18,7 +19,7 @@ def fetch_guid(profile_id):
     else:
         return None
 
-def fetch_bearer_token(guid):
+def fetch_bearer_token(guid, retries=10, delay=1):
     url = "https://www.sololearn.com/user/publicToken"
     headers = {
         "Content-Type": "application/json",
@@ -28,14 +29,26 @@ def fetch_bearer_token(guid):
         "Referer": "https://www.sololearn.com/",
     }
     payload = {
-        "subject": guid
+        "subject": guid,
+        # "checkboxCaptcha": "false",
+        # "captchaToken": "03A..." # if you want to bypass captcha you can add this line
+
     }
-    response = requests.post(url, headers=headers, json=payload)
-    if response.status_code == 200:
-        data = response.json()
-        return data.get("accessToken")
-    else:
-        return None
+
+    for attempt in range(retries): # try to fetch the token for a number of times to bypass the captcha not always 100% working though
+        try:
+            response = requests.post(url, headers=headers, json=payload)
+            if response.status_code == 200:
+                data = response.json()
+                token = data.get("accessToken")
+                if token:
+                    return token  # Return the token if successfully fetched
+            time.sleep(delay)
+        except Exception as e:
+            pass  # suppresses the error and continues the loop
+
+    return None  # return none if the token is not found after all attempts
+
 
 def fetch_profile_info(bearer_token, profile_id):
     url = f"https://api2.sololearn.com/v2/userinfo/v3/profile/{profile_id}"
